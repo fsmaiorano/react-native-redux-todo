@@ -9,13 +9,13 @@ const Routes = StackNavigator({
   Main: { screen: Main },
   Favorites: { screen: Favorites },
 }, {
-  navigationsOptions: {
+  navigationOptions: {
     headerStyle: {
       backgroundColor: colors.primaryDark,
     },
     headerTintColor: colors.white,
     headerBackTitle: null,
-  }
+  },
 });
 
 export default Routes;
