@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, StatusBar, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, StatusBar, Text, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 
 import styles from './styles';
 
 const Main = () => (
-  <View style={styles.container}>
+  <SafeAreaView style={styles.container}>
     <StatusBar barStyle="light-content" />
 
     <View style={styles.content}>
@@ -37,7 +37,7 @@ const Main = () => (
         <Text style={styles.footerLink}>Meus favoritos (3)</Text>
       </TouchableOpacity>
     </View>
-  </View>
+  </SafeAreaView>
 );
 
 Main.navigationOptions = {
