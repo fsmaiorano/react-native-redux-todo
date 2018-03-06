@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StatusBar, Text, TextInput, TouchableOpacity, SafeAreaView, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as FavoriteActions from 'store/actions/favorites';
+import { Creators as FavoriteActions } from 'store/ducks/favorites';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
