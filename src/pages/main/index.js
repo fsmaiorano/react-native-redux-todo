@@ -17,6 +17,7 @@ class Main extends Component {
       navigate: PropTypes.func,
     }).isRequired,
     addFavoriteRequest: PropTypes.func.isRequired,
+    favoritesCount: PropTypes.number.isRequired,
   }
 
   state = {
@@ -68,7 +69,7 @@ class Main extends Component {
         </View>
         <View style={styles.footer}>
           <TouchableOpacity onPress={this.navigateToFavorites}>
-            <Text style={styles.footerLink}>Meus favoritos (3)</Text>
+            <Text style={styles.footerLink}>Meus favoritos ({this.props.favoritesCount})</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -79,4 +80,8 @@ class Main extends Component {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(FavoriteActions, dispatch);
 
-export default connect(null, mapDispatchToProps)(Main);
+const mapStateToProps = state => ({
+  favoritesCount: state.favorites.length,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
